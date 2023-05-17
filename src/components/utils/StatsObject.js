@@ -1327,26 +1327,26 @@ function initStatsObject() {
   return obj;
 }
 
-// function isPressurePointForPlayer(pl, r)
-// {
-//     if (r.homeScore == 6 && r.awayScore == 6)
-//     {
-//         return true;
-//     }
+function isPressurePointForPlayer(pl, r, match)
+{
+    if (r.homeScore == 6 && r.awayScore == 6)
+    {
+        return true;
+    }
     
-//     var p1score = r.firstServe.playerGameScore;
-//     var p2score = r.firstServe.oppositionGameScore;
-//     if (pl == set.match.player)
-//     {
-//         if (isOppositionBreakpoint(r, m)) return true;
-//         // point leads to a break point eg 30-30, 40-40
-//         if (p2score >= 2 && p1score <= p2score) return true;
-//     }
-//     else if (pl == m.player2)
-//     {
-//         if (isPlayerBreakpoint(r, m)) return true;
-//         // point leads to a break point eg 30-30, 40-40
-//         if (p1score >= 2 && p2score <= p1score) return true;
-//     }
-//     return false;
-// }
+    var p1score = r.firstServe.playerGameScore;
+    var p2score = r.firstServe.oppositionGameScore;
+    if (pl == match.player1)
+    {
+        if (isOppositionBreakpoint(r, match)) return true;
+        // point leads to a break point eg 30-30, 40-40
+        if (p2score >= 2 && p1score <= p2score) return true;
+    }
+    else if (pl == match.player2)
+    {
+        if (isPlayerBreakpoint(r, match)) return true;
+        // point leads to a break point eg 30-30, 40-40
+        if (p1score >= 2 && p2score <= p1score) return true;
+    }
+    return false;
+}
